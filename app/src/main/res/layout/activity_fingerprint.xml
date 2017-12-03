@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fingerprint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.bale.fingerprint.FingerprintActivity"
+    >
+
+  <LinearLayout
+      android:id="@+id/headerLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="100dp"
+      android:gravity="center"
+      android:orientation="vertical"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/fingerprint_activity_title"
+        android:textColor="@color/textPrimary"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
+        android:text="@string/fingerprint_activity_description"
+        android:textAlignment="center"
+        android:textColor="@color/textPrimary"
+        android:textSize="16sp"
+        />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="30dp"
+        android:paddingTop="2dp"
+        android:src="@mipmap/ic_fp_40px"
+        />
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/errorText"
+        android:textSize="14sp"
+        />
+
+  </LinearLayout>
+
+</RelativeLayout>

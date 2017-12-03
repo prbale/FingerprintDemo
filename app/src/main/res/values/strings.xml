@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Fingerprint</string>
+    <string name="fingerprint_activity_title">Firngerprint Authentication Demo</string>
+    <string name="fingerprint_activity_description">Please place your fingertip on the scanner to verify your identity</string>
+
+    <!-- Error messages -->
+    <string name="error_message_fingerprint_sensor_missing">Your Device does not have a Fingerprint Sensor. Please implement other default authentication mechanism.</string>
+    <string name="error_message_fingerprint_authenticaion_not_enabled">Fingerprint authentication permission not enabled</string>
+    <string name="error_message_register_atleast_one_finger">Register at least one fingerprint in Settings</string>
+    <string name="error_message_lock_screen_security_not_enabled">Lock screen security not enabled in Settings</string>
+</resources>
