@@ -10,7 +10,13 @@ import android.os.Bundle
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyPermanentlyInvalidatedException
 import android.security.keystore.KeyProperties
+import android.support.design.widget.Snackbar
+import android.support.v4.view.ViewCompat.onInitializeAccessibilityNodeInfo
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.view.accessibility.AccessibilityNodeInfo
+import kotlinx.android.synthetic.main.activity_fingerprint.activity_fingerprint
 import kotlinx.android.synthetic.main.activity_fingerprint.errorText
 import kotlinx.android.synthetic.main.activity_fingerprint.icon
 import java.io.IOException
@@ -170,6 +176,26 @@ class FingerprintActivity : AppCompatActivity(), FingerprintHandler.Authenticati
   override fun onAuthenticationFailed(errorMessage: String) {
     errorText.text = errorMessage
     icon.setImageResource(R.drawable.ic_fingerprint_error)
+
+    var snack: Snackbar = activity_fingerprint.snack("Snack message", Snackbar.LENGTH_INDEFINITE) {
+      action("Action") {
+        performAction()
+      }
+    }
+
+    if(isAccessibilityEnabled()) {
+      snack.view.setOnClickListener {
+        performAction()
+        snack.dismiss()
+      }
+    }
+  }
+
+  private fun performAction() {
+    val alertDilog = AlertDialog.Builder(this@FingerprintActivity).create()
+    alertDilog.setTitle("Error")
+    alertDilog.setMessage("Snackbar action performed")
+    alertDilog.show()
   }
 
 }
