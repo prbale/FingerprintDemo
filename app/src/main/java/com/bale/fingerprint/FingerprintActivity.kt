@@ -176,19 +176,6 @@ class FingerprintActivity : AppCompatActivity(), FingerprintHandler.Authenticati
   override fun onAuthenticationFailed(errorMessage: String) {
     errorText.text = errorMessage
     icon.setImageResource(R.drawable.ic_fingerprint_error)
-
-    var snack: Snackbar = activity_fingerprint.snack("Snack message", Snackbar.LENGTH_INDEFINITE) {
-      action("Action") {
-        performAction()
-      }
-    }
-
-    if(isAccessibilityEnabled()) {
-      snack.view.setOnClickListener {
-        performAction()
-        snack.dismiss()
-      }
-    }
   }
 
   private fun performAction() {
